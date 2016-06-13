@@ -10,56 +10,53 @@ public class Evento {
 	private Date DataEvento;
 	private StringBuffer Sinopse;
 	private ArrayList Componentes;
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String descicao) {
+
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public Date getDataInclusao() {
 		return DataInclusao;
 	}
+
 	public void setDataInclusao(Date dataInclusao) {
-		this.DataInclusao = dataInclusao;
+		DataInclusao = dataInclusao;
 	}
+
 	public Date getDataEvento() {
 		return DataEvento;
 	}
+
 	public void setDataEvento(Date dataEvento) {
-		this.DataEvento = dataEvento;
+		DataEvento = dataEvento;
 	}
+
 	public StringBuffer getSinopse() {
 		return Sinopse;
 	}
+
 	public void setSinopse(StringBuffer sinopse) {
 		Sinopse = sinopse;
 	}
+
 	public ArrayList getComponentes() {
 		return Componentes;
 	}
+
 	public void setComponentes(ArrayList componentes) {
-		this.Componentes = componentes;
+		Componentes = componentes;
 	}
-	
-	
-	public Evento(String descricao,Date dataInclusao,Date dataEvento, StringBuffer Sinopse, ArrayList componentes){
-		
-		setDescricao(descricao);
-		setDataInclusao(dataInclusao);
-		setDataEvento(DataEvento);
-		setSinopse(Sinopse);
-		setComponentes(Componentes);
-		
+
+	public void abrirEvento() {
+
 	}
-	
-	public void AbrirEvento(){ 
-		
-		
-		}
-	
-	public void pesquisarEvento(){
-		
+
+	public void pesquisarEvento() {
+
 	}
-	
+
 }

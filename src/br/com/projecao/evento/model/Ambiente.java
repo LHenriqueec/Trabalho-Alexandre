@@ -1,16 +1,11 @@
 package br.com.projecao.evento.model;
 
 public abstract class Ambiente {
-	
+
 	private String descricao;
 	private int capacidadeTotal;
-	private String endereco;
+	private Endereco endereco;
 	private String nome;
-	private String pontoReferencia;
-
-	public Ambiente() {
-
-	}
 
 	public String getDescricao() {
 		return descricao;
@@ -28,11 +23,11 @@ public abstract class Ambiente {
 		this.capacidadeTotal = capacidadeTotal;
 	}
 
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 
@@ -44,15 +39,7 @@ public abstract class Ambiente {
 		this.nome = nome;
 	}
 
-	public String getPontoReferencia() {
-		return pontoReferencia;
-	}
+	public void adicionarAmbiente() {
 
-	public void setPontoReferencia(String pontoReferencia) {
-		this.pontoReferencia = pontoReferencia;
 	}
-
-	public abstract void adicionarAmbiente();		
-	
-	
 }

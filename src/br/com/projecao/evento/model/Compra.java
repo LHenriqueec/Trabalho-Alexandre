@@ -2,41 +2,35 @@ package br.com.projecao.evento.model;
 
 public class Compra {
 	
-	private Double ValorUnit;
-	private Double Valortotal;
-	private int Quantidade;
-	
+	private Double valorUnit;
+	private Double valortotal;
+	private int quantidade;
+
 	public Double getValorUnit() {
-		return ValorUnit;
+		return valorUnit;
 	}
+
 	public void setValorUnit(Double valorUnit) {
-		ValorUnit = valorUnit;
+		this.valorUnit = valorUnit;
 	}
+
 	public Double getValortotal() {
-		return Valortotal;
+		return valortotal;
 	}
+
 	public void setValortotal(Double valortotal) {
-		Valortotal = valortotal;
+		this.valortotal = valortotal;
 	}
+
 	public int getQuantidade() {
-		return Quantidade;
+		return quantidade;
 	}
+
 	public void setQuantidade(int quantidade) {
-		Quantidade = quantidade;
+		this.quantidade = quantidade;
 	}
-	
-	public Compra(Double ValorUnit,Double Valortotal,int Quantidade){
-		
-		setQuantidade(Quantidade);
-		setValorUnit(ValorUnit);
-		setValortotal( CalculaValor() );
-		
+
+	public void calculaValor() {
+
 	}
-	
-	public Double CalculaValor(){
-		
-		return getValorUnit() * getQuantidade() ;
-		
-	}		
-	
 }
