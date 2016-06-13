@@ -47,4 +47,16 @@ public class Endereco {
     public void setCep(String cep) {
         this.cep = cep;
     }
+
+    @Override
+    public String toString() {
+        StringBuffer buff = new StringBuffer();
+        buff.append("Quadra: ").append(quadra)
+                .append(" Nº Casa: ").append(numCasa)
+                .append(" Bairro: ").append(bairro)
+                .append(" Cidade: ").append(cidade)
+                .append(" Cep: ").append(cep);
+
+        return buff.toString();
+    }
 }

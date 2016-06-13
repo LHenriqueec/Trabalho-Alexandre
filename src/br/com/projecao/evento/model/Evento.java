@@ -3,6 +3,7 @@ package br.com.projecao.evento.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Evento {
 	
@@ -11,6 +12,7 @@ public class Evento {
 	private LocalDate dataEvento;
 	private StringBuffer sinopse;
 	private ArrayList componentes;
+	private Ambiente ambiente;
 
 	public String getDescricao() {
 		return descricao;
@@ -52,12 +54,29 @@ public class Evento {
 		this.componentes = componentes;
 	}
 
+	public Ambiente getAmbiente() {
+		return ambiente;
+	}
+
+	public void setAmbiente(Ambiente ambiente) {
+		this.ambiente = ambiente;
+	}
+
 	public void abrirEvento() {
+		System.out.println(ambiente);
+	}
+
+	public void pesquisarEvento(String pesquisa) {
 
 	}
 
-	public List<Evento> pesquisarEvento() {
-		return null;
-	}
+	@Override
+	public String toString() {
+		StringBuffer buff = new StringBuffer();
+		buff.append("Descrição: ").append(descricao)
+				.append(" Sinopse:").append(sinopse)
+				.append(" Data do Evento: ").append(dataEvento);
 
+		return buff.toString();
+	}
 }

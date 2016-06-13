@@ -73,6 +73,7 @@ public class Usuario {
 		System.out.print("Nome: "); setNome(scanner.next());
 		System.out.print("CPF: "); setCpf(scanner.next());
 		System.out.print("Telefone: "); setTelefone(scanner.next());
+		System.out.print("Email: "); setEmail(scanner.next());
 		System.out.print("Data de Nascimento: "); setDataNascimento(LocalDate.parse(scanner.next()));
 		System.out.print("Bairro: "); this.endereco.setBairro(scanner.next());
 		System.out.print("Quadra: "); this.endereco.setQuadra(scanner.next());
