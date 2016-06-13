@@ -75,7 +75,7 @@ public class Evento {
 		StringBuffer buff = new StringBuffer();
 		buff.append("Descrição: ").append(descricao)
 				.append(" Sinopse:").append(sinopse)
-				.append(" Data do Evento: ").append(dataEvento);
+				.append(" Data do Evento (yyyy-MM-dd): ").append(dataEvento);
 
 		return buff.toString();
 	}

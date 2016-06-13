@@ -5,6 +5,7 @@ public class Ingresso {
 	private String setor;
 	private int cadeiraNumerada;
 	private String situacao;
+	private Evento evento;
 
 	public String getSetor() {
 		return setor;
@@ -28,5 +29,13 @@ public class Ingresso {
 
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
+	}
+
+	public Evento getEvento() {
+		return evento;
+	}
+
+	public void setEvento(Evento evento) {
+		this.evento = evento;
 	}
 }

@@ -74,7 +74,7 @@ public class Usuario {
 		System.out.print("CPF: "); setCpf(scanner.next());
 		System.out.print("Telefone: "); setTelefone(scanner.next());
 		System.out.print("Email: "); setEmail(scanner.next());
-		System.out.print("Data de Nascimento: "); setDataNascimento(LocalDate.parse(scanner.next()));
+		System.out.print("Data de Nascimento (yyyy-MM-dd): "); setDataNascimento(LocalDate.parse(scanner.next()));
 		System.out.print("Bairro: "); this.endereco.setBairro(scanner.next());
 		System.out.print("Quadra: "); this.endereco.setQuadra(scanner.next());
 		System.out.print("Nº casa: "); this.endereco.setNumCasa(scanner.nextInt());
@@ -84,13 +84,19 @@ public class Usuario {
 		System.out.println(this);
 	}
 
-	public void comprarIngresso(Compra compra) {
+	public void comprarIngresso(Compra compra, Evento evento) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("INFORMAÇÕES DA COMPRA");
 		System.out.print("Valor Unitário: "); compra.setValorUnit(scanner.nextDouble());
 		System.out.print("Quantidade: "); compra.setQuantidade(scanner.nextInt());
-		System.out.print("Valor da Compra: "); compra.setValortotal(compra.calculaValor());
+		compra.setValortotal(compra.calculaValor());
+		System.out.print("Valor da Compra: "); compra.getValortotal();
+		System.out.println();
+		compra.setIngresso(new Ingresso());
+		compra.getIngresso().setEvento(evento);
 	}
+
+
 
 
 	@Override
@@ -99,7 +105,6 @@ public class Usuario {
 		buff.append("USUARIO").append("\n")
 				.append("Nome: ").append(nome).append("\n")
 				.append("CPF: ").append(cpf).append("\n")
-				.append("Endereço: ").append(endereco).append("\n")
 				.append("Email: ").append(email).append("\n")
 				.append("Telefone: ").append(telefone).append("\n")
 				.append(endereco);

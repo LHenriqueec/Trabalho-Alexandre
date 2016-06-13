@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Principal {
 	private static List<Evento> list = new ArrayList<>();
 	private static List<Usuario> listUsuario = new ArrayList<>();
+	private static List<Compra> listCompras = new ArrayList<>();
 
 	public static void main(String[] args) {
 
@@ -24,6 +25,8 @@ public class Principal {
 		System.out.println("1 - Visualizar Eventos");
 		System.out.println("2 - Cadastrar Eventos");
 		System.out.println("3 - Cadastrar Usuario");
+		System.out.println("4 - Listar Usuários cadastrados");
+		System.out.println("5 - Efetuar Compra");
 
 		switch (scanner.nextInt()) {
 			case 1: listarEventos();
@@ -32,9 +35,56 @@ public class Principal {
 				break;
 			case 3: cadastrarUsuario();
 				break;
+			case 4: listarUsuarios();
+				break;
+			case 5: comprar();
+				break;
 		}
 
 		start();
+	}
+
+	private static void comprar() {
+		if (listUsuario.size() <= 0) {
+			System.out.println("É necessário cadastrar um Usuário!");
+			cadastrarUsuario();
+		}
+
+		Scanner scanner = new Scanner(System.in);
+		listarUsuarios();
+		System.out.println("Escolha um usuário: ");
+		Compra compra = new Compra();
+
+		Usuario usuario = listUsuario.get(scanner.nextInt()-1);
+		Evento evento = escolheEvento();
+		usuario.comprarIngresso(compra, evento);
+
+
+		listCompras.add(compra);
+	}
+
+	private static Evento escolheEvento() {
+		if (listarEventos()) {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Escolha um Evento: ");
+			return list.get(scanner.nextInt()-1);
+		}
+
+		return criarEvento();
+	}
+
+	private static void listarUsuarios() {
+		if (listUsuario.size() <= 0) {
+			System.out.println("Não existem usuários cadastrados!");
+			return;
+		}
+
+		clearConsole();
+		listUsuario.forEach(usuario -> {
+			int i = 1;
+			System.out.print(i +"-"+ usuario);
+			i++;
+		});
 	}
 
 	private static void cadastrarUsuario() {
@@ -43,7 +93,7 @@ public class Principal {
 		listUsuario.add(usuario);
 	}
 
-	private static void criarEvento() {
+	private static Evento criarEvento() {
 		Evento evento = new Evento();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Descrição: "); evento.setDescricao(scanner.next());
@@ -68,13 +118,14 @@ public class Principal {
 
 		list.add(evento);
 
+		return evento;
 	}
 
-	private static void listarEventos() {
+	private static boolean listarEventos() {
 		if (list.size() <= 0) {
 			clearConsole();
 			System.out.print("Não existem eventos!\n");
-			return;
+			return false;
 		}
 
 		list.forEach(evento -> {
@@ -90,6 +141,7 @@ public class Principal {
 				break;
 			case 2: break;
 		}
+		return true;
 	}
 
 	private static void detalharEvento() {

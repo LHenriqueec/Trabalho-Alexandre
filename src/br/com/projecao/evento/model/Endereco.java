@@ -55,7 +55,7 @@ public class Endereco {
                 .append(" Nº Casa: ").append(numCasa)
                 .append(" Bairro: ").append(bairro)
                 .append(" Cidade: ").append(cidade)
-                .append(" Cep: ").append(cep);
+                .append(" Cep: ").append(cep).append("\n\n");
 
         return buff.toString();
     }
