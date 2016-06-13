@@ -9,6 +9,8 @@ public class Principal {
 		Usuario usuario = new Usuario();
 
 
+		usuario.cadastrarUsuario();
+
 	}
 
 }

@@ -2,6 +2,7 @@ package br.com.projecao.evento.model;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Usuario {
 
@@ -11,6 +12,10 @@ public class Usuario {
 	private String email;
 	private String telefone;
 	private LocalDate dataNascimento;
+
+	public Usuario() {
+		endereco = new Endereco();
+	}
 
 	public String getNome() {
 		return nome;
@@ -61,10 +66,36 @@ public class Usuario {
 	}
 
 	public void cadastrarUsuario() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("CADASTRO DE USUARIO");
+		System.out.print("Nome: "); setNome(scanner.next());
+		System.out.print("CPF: "); setCpf(scanner.next());
+		System.out.print("Telefone: "); setTelefone(scanner.next());
+		System.out.print("Data de Nascimento: "); setDataNascimento(LocalDate.parse(scanner.next()));
+		System.out.print("Bairro: "); this.endereco.setBairro(scanner.next());
+		System.out.print("Quadra: "); this.endereco.setQuadra(scanner.next());
+		System.out.print("Nº casa: "); this.endereco.setNumCasa(scanner.nextInt());
+		System.out.print("Cidade: "); this.endereco.setCidade(scanner.next());
+		System.out.print("CEP: "); this.endereco.setCep(scanner.next());
 
+		System.out.println(this);
 	}
 
 	public void comprarIngresso() {
 
+
+	}
+
+	@Override
+	public String toSring() {
+		StringBuffer buff = new StringBuffer();
+		buff.append("USUARIO").append("\n")
+				.append("Nome: ").append(nome).append("\n")
+				.append("CPF: ").append(cpf).append("\n")
+				.append("Endereço: ").append(endereco).append("\n")
+				.append("Email: ").append(email).append("\n")
+				.append("Telefone: ").append(telefone).append("\n")
+				.append(endereco);
+		return buff.toString();
 	}
 }
