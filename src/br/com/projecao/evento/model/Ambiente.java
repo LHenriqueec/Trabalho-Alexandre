@@ -1,4 +1,4 @@
-package br.com.projecao.evento;
+package br.com.projecao.evento.model;
 
 public abstract class Ambiente {
 	
@@ -7,7 +7,11 @@ public abstract class Ambiente {
 	private String endereco;
 	private String nome;
 	private String pontoReferencia;
-	
+
+	public Ambiente() {
+
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -48,10 +52,6 @@ public abstract class Ambiente {
 		this.pontoReferencia = pontoReferencia;
 	}
 
-	public Ambiente(){
-		
-	}
-	
 	public abstract void adicionarAmbiente();		
 	
 	

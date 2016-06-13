@@ -1,9 +1,9 @@
-package br.com.projecao.evento;
+package br.com.projecao.evento.application;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 
 	}
 

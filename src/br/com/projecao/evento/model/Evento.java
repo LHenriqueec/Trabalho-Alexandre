@@ -1,4 +1,4 @@
-package br.com.projecao.evento;
+package br.com.projecao.evento.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
