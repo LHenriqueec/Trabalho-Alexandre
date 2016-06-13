@@ -1,15 +1,16 @@
 package br.com.projecao.evento.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Evento {
 	
 	private String descricao;
-	private Date DataInclusao;
-	private Date DataEvento;
-	private StringBuffer Sinopse;
-	private ArrayList Componentes;
+	private LocalDate dataInclusao;
+	private LocalDate dataEvento;
+	private StringBuffer sinopse;
+	private ArrayList componentes;
 
 	public String getDescricao() {
 		return descricao;
@@ -19,44 +20,44 @@ public class Evento {
 		this.descricao = descricao;
 	}
 
-	public Date getDataInclusao() {
-		return DataInclusao;
+	public LocalDate getDataInclusao() {
+		return dataInclusao;
 	}
 
-	public void setDataInclusao(Date dataInclusao) {
-		DataInclusao = dataInclusao;
+	public void setDataInclusao(LocalDate dataInclusao) {
+		this.dataInclusao = dataInclusao;
 	}
 
-	public Date getDataEvento() {
-		return DataEvento;
+	public LocalDate getDataEvento() {
+		return dataEvento;
 	}
 
-	public void setDataEvento(Date dataEvento) {
-		DataEvento = dataEvento;
+	public void setDataEvento(LocalDate dataEvento) {
+		this.dataEvento = dataEvento;
 	}
 
 	public StringBuffer getSinopse() {
-		return Sinopse;
+		return sinopse;
 	}
 
 	public void setSinopse(StringBuffer sinopse) {
-		Sinopse = sinopse;
+		this.sinopse = sinopse;
 	}
 
 	public ArrayList getComponentes() {
-		return Componentes;
+		return componentes;
 	}
 
 	public void setComponentes(ArrayList componentes) {
-		Componentes = componentes;
+		this.componentes = componentes;
 	}
 
 	public void abrirEvento() {
 
 	}
 
-	public void pesquisarEvento() {
-
+	public List<Evento> pesquisarEvento() {
+		return null;
 	}
 
 }

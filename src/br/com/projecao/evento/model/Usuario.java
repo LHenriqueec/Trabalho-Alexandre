@@ -1,5 +1,7 @@
 package br.com.projecao.evento.model;
 
+import javafx.scene.control.ComboBox;
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -81,13 +83,17 @@ public class Usuario {
 		System.out.println(this);
 	}
 
-	public void comprarIngresso() {
-
-
+	public void comprarIngresso(Compra compra) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("INFORMAÇÕES DA COMPRA");
+		System.out.print("Valor Unitário: "); compra.setValorUnit(scanner.nextDouble());
+		System.out.print("Quantidade: "); compra.setQuantidade(scanner.nextInt());
+		System.out.print("Valor da Compra: "); compra.setValortotal(compra.calculaValor());
 	}
 
+
 	@Override
-	public String toSring() {
+	public String toString() {
 		StringBuffer buff = new StringBuffer();
 		buff.append("USUARIO").append("\n")
 				.append("Nome: ").append(nome).append("\n")
@@ -96,6 +102,6 @@ public class Usuario {
 				.append("Email: ").append(email).append("\n")
 				.append("Telefone: ").append(telefone).append("\n")
 				.append(endereco);
-		return buff.toString();
-	}
+
+		return buff.toString();	}
 }

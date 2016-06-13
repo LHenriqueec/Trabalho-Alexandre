@@ -30,7 +30,7 @@ public class Compra {
 		this.quantidade = quantidade;
 	}
 
-	public void calculaValor() {
-
+	public double calculaValor() {
+		return valorUnit * quantidade;
 	}
 }
